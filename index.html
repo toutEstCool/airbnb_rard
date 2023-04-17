@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Fontfamily -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Connect CSS -->
+  <link rel="stylesheet" href="./css/index.css">
+  <!-- отложенное подключение js файла -->
+  <script src="/js/index.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <section class="form">
+        <form id="form">
+          <h3>Create House</h3>
+
+          <label for="name">Name</label>
+          <input id='name' type="text" placeholder="Enter Name">
+
+          <label for="airbnb">Airbnb URL</label>
+          <input id='airbnb' type="text" placeholder="Enter Airbnb">
+
+          <label for="url">Img URL</label>
+          <input id='url' type="text" placeholder="Enter URL">
+
+          <label for="price">Price</label>
+          <input id='price' type="number" placeholder="Enter Price">
+
+          <label for="summary">Summary</label>
+          <textarea id="summary" placeholder="Enter Summary"></textarea>
+
+          <button id="submit" type="submit">Create</button>
+        </form>
+      </section>
+      <section class="chanks"></section>
+    </div>
+  </div>
+</body>
+</html>
