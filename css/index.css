@@ -2,6 +2,7 @@
 @import './_search.css';
 @import './_sorting.css';
 @import './_sortAndSearch.css';
+@import './_modal.css';
 
 * {
   padding: 0;

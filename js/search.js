@@ -5,7 +5,6 @@ export const Search = () => {
   const searchTitle = document.createElement('h4')
   const searchInput = document.createElement('input')
 
-  
   searchComponent.classList.add('search')
   container.classList.add('container')
   wrapper.classList.add('search-wrapper')

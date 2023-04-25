@@ -1,0 +1,24 @@
+.modal-container {
+  position: absolute;
+  background: rgba(85, 85, 85, 0.6);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrapper {
+  max-width: 705px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  max-height: 705px;
+  height: 100%;
+}
+.modal__title {}
+.modal-form {}
+.modal__btn {}
