@@ -1,3 +1,5 @@
+import { modalCreate } from "./modalCreate.js"
+
 export const Header = () => {
   const header = document.createElement('header')
   const container = document.createElement('div')
@@ -6,6 +8,8 @@ export const Header = () => {
   const logoImg = document.createElement('img')
   const createImg = document.createElement('div')
   const createImgElement = document.createElement('img')
+
+  createImgElement.addEventListener('click', modalCreate)
 
   header.classList.add('header')
   container.classList.add('container')
