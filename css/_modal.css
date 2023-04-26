@@ -7,6 +7,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: fade .6s ease-in-out .4s forwards;
+}
+@keyframes fade {
+  0% {opacity: 0;}
+  50% {opacity: .5;}
+  100% {opacity: 1;}
 }
 
 .modal-wrapper {
@@ -18,7 +25,81 @@
   flex-direction: column;
   max-height: 705px;
   height: 100%;
+  padding: 30px 114px 60px 114px;
 }
-.modal__title {}
-.modal-form {}
-.modal__btn {}
+.modal__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 44px;
+  letter-spacing: -0.05em;
+  color: var(--btn-main-bg);
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+.modal-form label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: var(--btn-main-bg);
+  cursor: pointer;
+}
+.modal-form input {
+  margin-bottom: 27px;
+  padding: 11px 10px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--input-border-color);
+  transition: all .4s ease-in;
+}
+.modal-form input:focus {
+  border: 1px solid #6ea1e7;
+}
+.modal-form input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--input-border-color);
+}
+.modal-form textarea {
+  margin-bottom: 27px;
+  width: 100% !important;
+  height: 80px !important;
+  border-radius: 8px;
+  padding: 11px 10px;
+  outline: none;
+  border: 1px solid var(--input-border-color);
+  text-decoration: none;
+}
+.modal-form textarea:focus {
+  border: 1px solid #6ea1e7;
+}
+.modal-form textarea::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--input-border-color);
+}
+.modal__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-weight: 600;
+  line-height: 20px;
+  transition: all .4s ease-in;
+  margin-top: 20px;
+}
+.modal__btn:hover {
+  background-color: #de284d;
+}

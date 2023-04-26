@@ -24,15 +24,14 @@ export const Modal = () => {
   modalForm.classList.add('modal-form')
   modalBtn.classList.add('modal__btn')
 
-  labelName.for = 'labelName'
-  labelAirUrl.for = 'labelAirUrl'
-  labelImg.for = 'labelImg'
-  labelSummary.for = 'labelSummary'
-  labelPrice.for = 'labelPrice'
-
+  labelName.setAttribute('for', 'labelName')
+  labelAirUrl.setAttribute('for', 'labelAirUrl')
+  labelImg.setAttribute('for', 'labelImg')
+  labelSummary.setAttribute('for', 'labelSummary')
+  
   labelName.textContent = 'Enter name'
   labelAirUrl.textContent = 'Enter url'
-  labelImg.textContent = 'Enter url'
+  labelImg.textContent = 'Enter Img'
   labelSummary.textContent = 'Enter summary'
   labelPrice.textContent = 'Enter price'
 
