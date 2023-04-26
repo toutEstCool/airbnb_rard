@@ -3,6 +3,7 @@
 @import './_sorting.css';
 @import './_sortAndSearch.css';
 @import './_modal.css';
+@import './_product.css';
 
 * {
   padding: 0;
@@ -44,4 +45,8 @@
 
 .active-btn {
   background-color: var(--main-color);
+}
+
+a {
+  text-decoration: none;
 }
