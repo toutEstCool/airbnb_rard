@@ -66,6 +66,7 @@ export const Modal = () => {
   return {
     modalContainer,
     modalTitle,
-    modalBtn
+    modalBtn,
+    modalForm
   }
 }
