@@ -1,3 +1,5 @@
+import { penSvg } from './svg.js';
+
 export const AirbnbItem = () => {
   const productContainer = document.createElement('div')
   const productWrapper = document.createElement('div')
@@ -18,6 +20,8 @@ export const AirbnbItem = () => {
   productContainer.classList.add('product-container')
   productWrapper.classList.add('product-wrapper')
   productSpace.classList.add('product-space')
+  productEdit.classList.add('product-edit')
+  productEditImg.classList.add('edit-img')
 
   productImg.src = 'https://i.pinimg.com/564x/f8/f9/9b/f8f99b724b008406401cb8d11db705b0.jpg'
   productName.textContent = 'Malax, Finland'
@@ -32,6 +36,9 @@ export const AirbnbItem = () => {
   productSummaryTitle.classList.add('summary-title')
   productSummaryDescription.classList.add('summary-description')
 
+
+  productEdit.innerHTML = penSvg
+
   productReferencesTitle.textContent = 'References'
   productReferencesLinks.textContent = 'airbnb'
   productReferencesLinks.target = '_blanck'
@@ -44,11 +51,12 @@ export const AirbnbItem = () => {
   productReferencesLinks.classList.add('items-links')
   productReferencesPrice.classList.add('items-price')
 
+  productEdit.append(productEditImg)
   productReferencesItems.append(productReferencesLinks, productReferencesPrice)
   productReferences.append(productReferencesTitle, productReferencesItems)
   productSummaryWrapper.append(productSummaryTitle,productSummaryDescription)
 
-  productWrapper.append(productImg, productSpace)
+  productWrapper.append(productEdit, productImg, productSpace)
   productSpace.append(productName, productSummaryWrapper, productReferences)
   productContainer.append(productWrapper)
 
