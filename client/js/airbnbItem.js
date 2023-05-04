@@ -1,6 +1,6 @@
 import { penSvg } from './svg.js';
 
-export const AirbnbItem = () => {
+export const AirbnbItem = (house) => {
   const productContainer = document.createElement('div')
   const productWrapper = document.createElement('div')
   const productImg = document.createElement('img')
@@ -23,14 +23,14 @@ export const AirbnbItem = () => {
   productEdit.classList.add('product-edit')
   productEditImg.classList.add('edit-img')
 
-  productImg.src = 'https://i.pinimg.com/564x/f8/f9/9b/f8f99b724b008406401cb8d11db705b0.jpg'
-  productName.textContent = 'Malax, Finland'
+  productImg.src = house.imgUrl
+  productName.textContent = house.name
 
   productImg.classList.add('product-img')
   productName.classList.add('product-title')
 
   productSummaryTitle.textContent = 'Summary'
-  productSummaryDescription.textContent = 'Since the original Annotation Kit came out, Figma shipped new versions of Auto Layout and Variants.'
+  productSummaryDescription.textContent = house.summary
 
   productSummaryWrapper.classList.add('product-summary')
   productSummaryTitle.classList.add('summary-title')
@@ -42,8 +42,8 @@ export const AirbnbItem = () => {
   productReferencesTitle.textContent = 'References'
   productReferencesLinks.textContent = 'airbnb'
   productReferencesLinks.target = '_blanck'
-  productReferencesLinks.href = 'https://www.airbnb.com/rooms/44532052?adults=1&category_tag=Tag%3A4104&children=0&enable_m3_private_room=false&infants=0&pets=0&search_mode=flex_destinations_search&check_in=2023-05-04&check_out=2023-05-09&federated_search_id=a8278581-e56d-4224-8a60-4ab4f1e105e0&source_impression_id=p3_1682515038_pSHB5wkPBzyTvW5s'
-  productReferencesPrice.textContent = '$253 night'
+  productReferencesLinks.href = house.airbnbUrl
+  productReferencesPrice.textContent = `$${house.price} night`
 
   productReferences.classList.add('references-container')
   productReferencesTitle.classList.add('references-title')

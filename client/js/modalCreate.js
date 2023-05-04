@@ -1,25 +1,20 @@
+import { postHouse } from './api/airbnbApi.js'
 import { Modal } from './modal.js'
 
 export const modalCreate = () => {
   const { modalTitle, modalBtn, modalContainer, modalForm } = Modal()
 
-  // const product = {
-  //   name: 'Malax, Finland',
-  //   linkUrL: 'HTTPS',
-  //   imgUrl: 'img',
-  //   summary: 'asdasdasd',
-  //   price: 125
-  // }
 
-  const product = {}
-
-  modalForm.addEventListener('submit', (e) => {
+  modalForm.addEventListener('submit', async (e) => {
     e.preventDefault()
+    const product = {}
     product.name = modalForm.labelName.value
-    product.airUrl = modalForm.labelAirUrl.value
-    product.img = modalForm.labelImg.value
+    product.airbnbUrl = modalForm.labelAirUrl.value
+    product.imgUrl = modalForm.labelImg.value
     product.summary = modalForm.labelSummary.value
     product.price = modalForm.labelPrice.value
+
+    await postHouse(product)
   })
 
 

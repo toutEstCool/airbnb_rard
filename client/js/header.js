@@ -18,8 +18,8 @@ export const Header = () => {
   logoImg.classList.add('link__logo')
   createImg.classList.add('header-create')
   createImgElement.classList.add('create__ImgElement')
-  createImgElement.src = '../img/header-create.svg'
-  logoImg.src = '../img/logo.svg'
+  createImgElement.src = './client/img/header-create.svg'
+  logoImg.src = './client/img/logo.svg'
   link.href = '/'
 
   header.append(container)
