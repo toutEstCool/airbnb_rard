@@ -45,7 +45,7 @@ function drainJson(req) {
  * @throws {ApiError} Некорректные данные в аргументе (statusCode 422)
  * @returns {{ name: string, airbnbUrl: string, imgUrl: string, summary: string, price: string }} Объект дома
  */
-function makeHouseFromData(data) {
+function makehouseFromData(data) {
   const errors = [];
 
   function asString(v) {
@@ -102,7 +102,7 @@ function gethouseList(params = {}) {
  * @returns {{ id: string, name: string, airbnbUrl: string, imgUrl: string, summary: string, price: string, createdAt: string, updatedAt: string }} Объект дома
  */
 function createhouse(data) {
-  const newItem = makeHouseFromData(data);
+  const newItem = makehouseFromData(data);
   newItem.id = Date.now().toString();
   newItem.createdAt = newItem.updatedAt = new Date().toISOString();
   writeFileSync(DB_FILE, JSON.stringify([...gethouseList(), newItem]), { encoding: 'utf8' });
@@ -133,7 +133,7 @@ function updatehouse(itemId, data) {
   const house = gethouseList();
   const itemIndex = house.findIndex(({ id }) => id === itemId);
   if (itemIndex === -1) throw new ApiError(404, { message: 'house Not Found' });
-  Object.assign(house[itemIndex], makeHouseFromData({ ...house[itemIndex], ...data }));
+  Object.assign(house[itemIndex], makehouseFromData({ ...house[itemIndex], ...data }));
   house[itemIndex].updatedAt = new Date().toISOString();
   writeFileSync(DB_FILE, JSON.stringify(house), { encoding: 'utf8' });
   return house[itemIndex];

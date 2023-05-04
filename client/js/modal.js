@@ -34,7 +34,7 @@ export const Modal = () => {
   labelImg.textContent = 'Enter Img'
   labelSummary.textContent = 'Enter summary'
   labelPrice.textContent = 'Enter price'
-
+  
   inputName.id = 'labelName' 
   inputAirUrl.id = 'labelAirUrl'
   inputImg.id = 'labelImg'
