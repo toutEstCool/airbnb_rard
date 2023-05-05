@@ -17,4 +17,9 @@ export const postHouse = async (data) => {
     return result;
 }
 
-
+export const editHouse = async (house, id) => {
+  await fetch(`http://localhost:3000/api/house/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify(house)
+  })
+}

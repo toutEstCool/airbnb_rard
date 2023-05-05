@@ -1,4 +1,6 @@
 import { penSvg } from './svg.js';
+import { formatDate } from './formatDate.js';
+import { modalUpdate } from './modalUpdate.js';
 
 export const AirbnbItem = (house) => {
   const productContainer = document.createElement('div')
@@ -16,7 +18,16 @@ export const AirbnbItem = (house) => {
   const productReferencesItems = document.createElement('div')
   const productReferencesLinks = document.createElement('a')
   const productReferencesPrice = document.createElement('span')
+  const createdTime = document.createElement('span')
 
+  createdTime.classList.add('created-time')
+  createdTime.textContent = formatDate(house.createdAt)
+
+  productEdit.addEventListener('click', () => {
+    modalUpdate(house)
+  })
+
+  
   productContainer.classList.add('product-container')
   productWrapper.classList.add('product-wrapper')
   productSpace.classList.add('product-space')
@@ -57,7 +68,7 @@ export const AirbnbItem = (house) => {
   productSummaryWrapper.append(productSummaryTitle,productSummaryDescription)
 
   productWrapper.append(productEdit, productImg, productSpace)
-  productSpace.append(productName, productSummaryWrapper, productReferences)
+  productSpace.append(productName, productSummaryWrapper, productReferences, createdTime)
   productContainer.append(productWrapper)
 
   return productContainer;

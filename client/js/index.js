@@ -1,18 +1,20 @@
 import { Header } from './header.js';
 import { SearchAndSort } from './searchAndSort.js';
-import { AirbnbItem } from './airbnbItem.js';
+import { WrapperHouse } from './wrapperHouse.js';
 import { getAllHouse } from './api/airbnbApi.js';
+import { AirbnbItem } from './airbnbItem.js';
 
 const createApp = async () => {
   const header = Header()
   const searchSort = SearchAndSort()
   const houses = await getAllHouse()
+  const wrapperHouse = WrapperHouse()
 
   for (const house of houses) {
-    document.querySelector('.houses').append(AirbnbItem(house))
+    wrapperHouse.append(AirbnbItem(house))
   }
   
-  document.body.append(header, searchSort)
+  document.body.append(header, searchSort, wrapperHouse)
 }
 
 createApp();

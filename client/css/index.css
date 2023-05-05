@@ -4,6 +4,7 @@
 @import './_sortAndSearch.css';
 @import './_modal.css';
 @import './_product.css';
+@import './_wrapperHouse.css';
 
 * {
   padding: 0;

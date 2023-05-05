@@ -1,0 +1,21 @@
+.wrapper-house {
+  max-width: 1320px;
+  width: 100%;
+  margin: 40px auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+}
+
+@media all and (max-width: 1000px){
+  .wrapper-house {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (max-width: 600px){
+  .wrapper-house {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

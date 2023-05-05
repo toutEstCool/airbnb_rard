@@ -1,4 +1,6 @@
-#1[ установить postman & insomnia ] {done}
-#2[ запустить сервер ] { done }
-#3[ функция запросов к апи house.js {getHouse, createHouse} ] 
-#4[ отрисовать данные ]
+#0[ add createdAt ] { done }
+#1[ фикс house-item ] { done }
+#2[ implement edit-modal] { done }
+#3[ set value в inputs ] { done }
+#4[ post new data в api ]
+#5[ delete house-item ]
