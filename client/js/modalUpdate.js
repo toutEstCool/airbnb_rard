@@ -7,7 +7,6 @@ export const modalUpdate = (house) => {
   modalForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     const product = {}
-    console.log(1);
     
     product.name = modalForm.labelName.value
     product.airbnbUrl = modalForm.labelAirUrl.value

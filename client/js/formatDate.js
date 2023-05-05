@@ -7,7 +7,6 @@ export const formatDate = (date) => {
     day: 'numeric'
   }
   const resultDate = realTime.toLocaleString('ru', correctDate)
-  console.log(1);
 
   return resultDate;
 }
