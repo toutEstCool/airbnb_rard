@@ -1,25 +1,50 @@
-const URL = 'http://localhost:3000/api/house'
-
-export const getAllHouse = async () => {
-  const response = await fetch(URL, {
+export const getAllData = async (point) => {
+  try {
+  const response = await fetch(`http://localhost:3000/api/${point}`, {
     method: 'GET'
   })
   const result = await response.json()
   return result;
+  } catch (error) {
+    console.log(error);
+  }
+}
+export const sendData = async (data, method, point, id = null) => {
+  try {
+    await fetch(`http://localhost:3000/api/${point}/${method == 'POST' ? '' : id}`, {
+    method,
+    body: JSON.stringify(data)
+  })
+  } catch (error) {
+    console.log(error);
+  }
+} 
+export const deleteData = async (point, id) => {
+  try {
+    await fetch(`http://localhost:3000/api/${point}/${id}`, {
+      method: 'DELETE'
+    })
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-export const postHouse = async (data) => {
-    const response = await fetch(URL, {
-      method: 'POST',
-      body: JSON.stringify(data)
+export const findHouse = async (value) => {
+  try {
+    const response = await fetch(`http://localhost:3000/api/house?search=${value}`, {
+      method: 'GET'
     })
     const result = await response.json()
     return result;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-export const editHouse = async (house, id) => {
-  await fetch(`http://localhost:3000/api/house/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify(house)
-  })
-}
+
+
+
+
+
+
+

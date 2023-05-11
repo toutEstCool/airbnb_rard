@@ -1,6 +1,3 @@
-#0[ add createdAt ] { done }
-#1[ фикс house-item ] { done }
-#2[ implement edit-modal] { done }
-#3[ set value в inputs ] { done }
-#4[ post new data в api ]
-#5[ delete house-item ]
+#1[ адаптив сортировки и поиска ] { - }
+#2[ пофиксить модалку ] { - }
+#3[ поиск дома ] { - }

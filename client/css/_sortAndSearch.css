@@ -5,5 +5,12 @@
 .wrapper-sortAndSearch {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 30px;
+}
+
+@media all and (max-width: 600px) {
+  body {
+    padding: 0 15px;
+  }
 }

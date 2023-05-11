@@ -1,9 +1,14 @@
-import { editHouse, postHouse } from './api/airbnbApi.js'
+import { deleteData, sendData } from './api/airbnbApi.js'
 import { Modal } from './modal.js'
 
 export const modalUpdate = (house) => {
+  const deleteBtn = document.createElement('button')
   const { modalTitle, modalBtn, modalContainer, modalForm } = Modal()
 
+  deleteBtn.classList.add('modal__btn', 'delete')
+  deleteBtn.textContent = 'Delete'
+  modalForm.append(deleteBtn)
+  
   modalForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     const product = {}
@@ -13,10 +18,13 @@ export const modalUpdate = (house) => {
     product.imgUrl = modalForm.labelImg.value
     product.summary = modalForm.labelSummary.value
     product.price = modalForm.labelPrice.value
-
     
-    await postHouse(product)
-    editHouse(product, house.id)
+    sendData(product, 'PATCH', 'house', house.id)
+  })
+
+  deleteBtn.addEventListener('click', () => {
+    let response = confirm('Вы уверенны ?')
+    if (response) deleteData('house', house.id)
   })
 
   modalForm.labelName.value = house.name

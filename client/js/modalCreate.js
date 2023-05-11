@@ -1,9 +1,8 @@
-import { postHouse } from './api/airbnbApi.js'
+import { sendData } from './api/airbnbApi.js'
 import { Modal } from './modal.js'
 
 export const modalCreate = () => {
   const { modalTitle, modalBtn, modalContainer, modalForm } = Modal()
-
 
   modalForm.addEventListener('submit', async (e) => {
     e.preventDefault()
@@ -15,11 +14,8 @@ export const modalCreate = () => {
     product.summary = modalForm.labelSummary.value
     product.price = modalForm.labelPrice.value
 
-    await postHouse(product)
+    await sendData(product, 'POST', 'house')
   })
-
-
-  
   modalTitle.textContent = 'Create House'
   modalBtn.textContent = 'Create'
   

@@ -1,9 +1,10 @@
 .modal-container {
-  position: absolute;
+  position: fixed;
   background: rgba(85, 85, 85, 0.6);
   top: 0;
   bottom: 0;
-  width: 100%;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,8 +24,7 @@
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  max-height: 705px;
-  height: 100%;
+  max-height: 800px;
   padding: 30px 114px 60px 114px;
 }
 .modal__title {
@@ -102,4 +102,8 @@
 }
 .modal__btn:hover {
   background-color: #de284d;
+}
+
+.delete {
+  background-color: rgb(37, 40, 39);
 }

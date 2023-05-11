@@ -85,11 +85,8 @@ function gethouseList(params = {}) {
     const search = params.search.trim().toLowerCase();
     return house.filter(house => [
         house.name,
-        house.surname,
-        house.lastName,
-        ...house.contacts.map(({ value }) => value)
       ]
-        .some(str => str.toLowerCase().includes(search))
+      .some(str => str.toLowerCase().includes(search))
     );
   }
   return house;
@@ -249,3 +246,4 @@ module.exports = createServer(async (req, res) => {
   })
   // ...и вызываем запуск сервера на указанном порту
   .listen(PORT);
+
